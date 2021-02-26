@@ -1,0 +1,28 @@
+version: '2'
+services:
+  country-app:
+    image: country-app
+    network_mode: bridge
+    ports:
+      - "8030:8030"
+    build:
+      context: .
+    expose:
+      - 8030
+    depends_on:
+      - mypostgres
+    links:
+      - mypostgres
+  mypostgres:
+    image: ghusta/postgres-world-db
+    network_mode: bridge
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    environment:
+       - POSTGRES_PASSWORD=world123
+       - POSTGRES_USER=world
+       - POSTGRES_DB=world-db
+
+
