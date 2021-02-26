@@ -2,7 +2,7 @@
 
 
 
-1- Clone Or Download Repositary 
+1- Clone Or Download repository 
 
 
 2- Go To Path Country-App-Repo-main/country and open cmd
