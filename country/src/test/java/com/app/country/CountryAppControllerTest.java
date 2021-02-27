@@ -49,7 +49,7 @@ class CountryAppControllerTest {
        MvcResult mvcResult = mockMvc.perform(get("/BHR")).andReturn();
        assertEquals(HttpStatus.OK.value(),mvcResult.getResponse().getStatus());
        verify(countryInfoService,times(1)).getCountryInfo("BHR");
-       assertFalse(mvcResult.getResponse().getContentAsString().isEmpty());
+       assertTrue(mvcResult.getResponse().getContentAsString().contains("BHR"));
     }
 
     @Test

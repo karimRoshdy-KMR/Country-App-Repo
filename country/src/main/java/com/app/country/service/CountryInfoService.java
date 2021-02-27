@@ -21,8 +21,6 @@ import java.util.Optional;
 public class CountryInfoService {
     @Autowired
     private  CountryRepository countryRepository;
-    @Autowired
-    private  CityRepository cityRepository;
 
     public CountryInfoDto getCountryInfo(String countryCode){
         //get Country By Code
@@ -30,9 +28,7 @@ public class CountryInfoService {
         //Check If Country Not Exist
         if(country ==null)
             throw new CountryNotFoundException("Invalid Country Code: " + countryCode);
-
       return getCountryInfoDtoFromEntity(country);
-
     }
 
     private  CountryInfoDto  getCountryInfoDtoFromEntity(Country country){
